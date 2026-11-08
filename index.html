@@ -321,6 +321,16 @@ button{font-family:inherit}
 .tally-row .t-bar{flex:1;height:14px;border-radius:8px;background:rgba(255,255,255,.1);overflow:hidden}
 .tally-row .t-bar>div{height:100%;width:0;border-radius:8px;transition:width 1.6s cubic-bezier(.23,1,.32,1)}
 .tally-row .t-val{width:72px;text-align:right;font-weight:600}
+.baby-photo{position:relative;width:300px;max-width:82vw;margin:.6rem auto 1.4rem;padding:14px 14px 0;background:#fefae0;border-radius:6px;
+  box-shadow:0 18px 45px rgba(0,0,0,.45),0 0 0 1px rgba(212,175,55,.4);transform:rotate(-2.5deg);animation:photoIn 1.2s cubic-bezier(.23,1,.32,1) 1.6s both}
+@keyframes photoIn{from{opacity:0;transform:translateY(40px) rotate(6deg) scale(.85)}to{opacity:1;transform:rotate(-2.5deg)}}
+.baby-photo img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:3px;background:#000}
+.baby-photo figcaption{font-family:'Dancing Script',cursive;font-size:1.45rem;color:var(--olive-base);padding:10px 4px 14px;line-height:1.2}
+.baby-photo .tape{position:absolute;top:-12px;left:50%;width:96px;height:26px;margin-left:-48px;background:rgba(204,213,174,.75);transform:rotate(3deg);box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.baby-photo .ph-sprig{position:absolute;width:70px;height:116px;pointer-events:none}
+.baby-photo .ph-sprig.l{left:-38px;bottom:-26px;transform:rotate(-28deg)}
+.baby-photo .ph-sprig.r{right:-36px;top:-30px;transform:rotate(160deg)}
+.photo-title{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--olive-cream);margin-top:.4rem;animation:fadeIn 1s ease 1.5s both}
 .float-item{position:fixed;bottom:-60px;pointer-events:none;z-index:201;animation:floatUp var(--dur) ease-in forwards}
 @keyframes floatUp{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.95}90%{opacity:.95}100%{transform:translateY(-115vh) rotate(var(--rot));opacity:0}}
 .firework{position:fixed;width:5px;height:5px;border-radius:50%;z-index:204;pointer-events:none}
@@ -725,6 +735,14 @@ button{font-family:inherit}
       <div class="tally-row"><span class="t-name">🌿 Niño</span><div class="t-bar"><div id="t-boy" style="background:linear-gradient(90deg,#606c38,#a3b18a)"></div></div><span class="t-val" id="t-boy-v">—</span></div>
       <div class="tally-row"><span class="t-name">🌾 Niña</span><div class="t-bar"><div id="t-girl" style="background:linear-gradient(90deg,#bc6c25,#dda15e)"></div></div><span class="t-val" id="t-girl-v">—</span></div>
     </div>
+    <p class="photo-title">✨ Nuestra primera foto juntos ✨</p>
+    <figure class="baby-photo">
+      <span class="tape"></span>
+      <svg class="ph-sprig l" aria-hidden="true"><use href="#sprig"/></svg>
+      <svg class="ph-sprig r" aria-hidden="true"><use href="#sprig"/></svg>
+      <img src="ecografia.jpg" alt="Ecografía 3D del bebé de Pau y Cris" loading="lazy">
+      <figcaption>Hola familia, ya los estoy saludando 💚</figcaption>
+    </figure>
     <button class="btn" id="btn-replay" style="margin-top:.4rem">🔁 Vivirlo otra vez</button>
   </div>
 </section>
